@@ -719,7 +719,7 @@ Generate a comprehensive Markdown report and save it to `projects/{project-dir}/
 
 | ID | Category | Severity | Location(s) | Summary | Recommendation |
 |----|----------|----------|-------------|---------|----------------|
-| R1 | Requirements Quality | HIGH | ARC-*-REQ-*.md:L45-52 | Duplicate security requirements | Merge NFR-S-001 and NFR-S-005 |
+| R1 | Requirements Quality | HIGH | ARC-*-REQ-*.md:L45-52 | Duplicate security requirements | Merge NFR-SEC-001 and NFR-SEC-005 |
 | P1 | Principles Alignment | CRITICAL | ARC-*-REQ-*.md:L120 | Violates Cloud-First principle | Change to cloud-native architecture |
 | T1 | Traceability | HIGH | No HLD coverage | NFR-P-002 (10K TPS) not addressed | Add performance architecture section to HLD |
 | UK1 | UK Gov Compliance | CRITICAL | Missing DPIA | AI system requires DPIA before deployment | Complete DPIA for AI Playbook compliance |
@@ -734,7 +734,7 @@ Generate a comprehensive Markdown report and save it to `projects/{project-dir}/
 |----------------|------|----------|-----------------|----------------|--------|
 | BR-001 | Business | MUST | ✅ HLD | ❌ Missing | ⚠️ Partial |
 | FR-001 | Functional | MUST | ✅ HLD, DLD | ✅ Tests | ✅ Complete |
-| NFR-S-001 | Security | MUST | ❌ Missing | ❌ Missing | ❌ Not Covered |
+| NFR-SEC-001 | Security | MUST | ❌ Missing | ❌ Missing | ❌ Not Covered |
 
 **Statistics**:
 - Total Requirements: {count}
@@ -746,7 +746,7 @@ Generate a comprehensive Markdown report and save it to `projects/{project-dir}/
 
 | Requirement ID | Priority | Description | Why Critical |
 |----------------|----------|-------------|--------------|
-| NFR-S-003 | MUST | Encrypt data at rest | Security requirement |
+| NFR-SEC-003 | MUST | Encrypt data at rest | Security requirement |
 | NFR-P-002 | MUST | Support 10K TPS | Performance critical |
 
 ---
@@ -1096,7 +1096,7 @@ Generate a comprehensive Markdown report and save it to `projects/{project-dir}/
 ### Critical Actions (MUST resolve before implementation/procurement)
 
 1. **[P1] Add Cloud-First architecture**: Current design violates Cloud-First principle. Redesign with AWS/Azure/GCP.
-2. **[R1] Cover security requirements**: NFR-S-003, NFR-S-007, NFR-S-012 have no design coverage. Add security architecture to HLD.
+2. **[R1] Cover security requirements**: NFR-SEC-003, NFR-SEC-007, NFR-SEC-012 have no design coverage. Add security architecture to HLD.
 3. **[UK1] Complete DPIA**: HIGH-RISK AI system requires completed DPIA before deployment (AI Playbook MANDATORY).
 
 ### High Priority Actions (SHOULD resolve before implementation/procurement)
@@ -1107,7 +1107,7 @@ Generate a comprehensive Markdown report and save it to `projects/{project-dir}/
 
 ### Medium Priority Actions (Improve quality)
 
-1. **[Q1] Consolidate duplicate requirements**: Merge NFR-S-001 and NFR-S-005 (identical).
+1. **[Q1] Consolidate duplicate requirements**: Merge NFR-SEC-001 and NFR-SEC-005 (identical).
 2. **[Q2] Fix terminology drift**: "User" vs "Customer" used inconsistently. Standardize.
 3. **[D1] Complete traceability matrix**: Add backward traceability from tests to requirements.
 
@@ -1288,8 +1288,8 @@ Expected improvement in scores after addressing findings.
 **Details**:
 
 ```text
-NFR-S-001: System MUST encrypt data at rest using AES-256
-NFR-S-005: All stored data SHALL be encrypted with AES-256 encryption
+NFR-SEC-001: System MUST encrypt data at rest using AES-256
+NFR-SEC-005: All stored data SHALL be encrypted with AES-256 encryption
 ```
 
 **Issue**: These are duplicate requirements with inconsistent language (MUST vs SHALL).
@@ -1298,8 +1298,8 @@ NFR-S-005: All stored data SHALL be encrypted with AES-256 encryption
 
 **Recommendation**:
 
-1. Keep NFR-S-001 (clearer wording)
-2. Delete NFR-S-005
+1. Keep NFR-SEC-001 (clearer wording)
+2. Delete NFR-SEC-005
 3. Update traceability matrix
 
 **Estimated Effort**: 10 minutes

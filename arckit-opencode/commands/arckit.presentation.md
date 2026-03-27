@@ -193,6 +193,8 @@ After the presentation content, add:
 
 **Presentation Coverage Score**: Calculate percentage of stakeholder goals addressed in the slides. Flag goals not covered.
 
+**Slide-to-Artifact Traceability**: Map each content slide to the ArcKit artifact(s) it draws from. This ensures all claims in the presentation are grounded in approved artifacts.
+
 Before writing the file, read `.arckit/references/quality-checklist.md` and verify all **Common Checks** plus the **PRES** per-type checks pass. Fix any failures before proceeding.
 
 - Write to `projects/{project-dir}/ARC-{PROJECT_ID}-PRES-v${VERSION}.md`

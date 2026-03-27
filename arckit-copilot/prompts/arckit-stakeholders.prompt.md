@@ -119,6 +119,8 @@ ${input:topic:Enter project name or topic}
    - Include both quantitative and qualitative measures
    - Consider UK Government context if applicable (Minister accountability, public scrutiny, parliamentary questions, transparency requirements, GovS 005 digital governance roles including SRO, Service Owner, CDDO, and DDaT Profession Lead)
 
+After the stakeholder analysis, add a **Stakeholder Analysis Completeness Score**: Calculate as percentage of stakeholders with all required elements (Power/Interest, drivers, goals, outcomes, engagement strategy, RACI role). Score = complete stakeholders / total × 100%.
+
 Before writing the file, read `.arckit/references/quality-checklist.md` and verify all **Common Checks** plus the **STKE** per-type checks pass. Fix any failures before proceeding.
 
 7. **Write the output**:

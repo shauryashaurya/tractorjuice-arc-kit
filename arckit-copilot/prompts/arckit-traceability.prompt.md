@@ -271,7 +271,7 @@ You should:
 - Read vendor HLD/DLD files for component/module names (hook only extracted req ID references)
 - Build forward traceability using hook data + vendor prose:
   - FR-001 (Process payment) → PaymentService (HLD) → PaymentController.processPayment() (DLD) → Test: TC-001, TC-002
-  - NFR-S-001 (PCI-DSS) → SecurityArchitecture (HLD) → TokenVault, Encryption (DLD) → Test: SEC-001 to SEC-015
+  - NFR-SEC-001 (PCI-DSS) → SecurityArchitecture (HLD) → TokenVault, Encryption (DLD) → Test: SEC-001 to SEC-015
   - BR-003 (Cost savings) → [NO DESIGN MAPPING] - ORPHAN! (from hook's orphan list)
 - Flag gaps using hook's coverage data:
   - CRITICAL: BR-003 (Cost savings) has no success metrics defined

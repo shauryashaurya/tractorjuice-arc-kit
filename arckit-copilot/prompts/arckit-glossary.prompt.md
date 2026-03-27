@@ -117,6 +117,8 @@ Generate Document ID: `ARC-{PROJECT_ID}-GLOS-v1.0` (for filename: `ARC-{PROJECT_
 
 ### 6. Quality Check
 
+After the glossary content, add a **Glossary Completeness Score**: Calculate as percentage of terms with all required fields populated (Term, Definition, Source Artifact, Category). Score = complete terms / total terms × 100%.
+
 Before writing the file, read `.arckit/references/quality-checklist.md` and verify all **Common Checks** pass. Fix any failures before proceeding.
 
 ### 7. Write the Glossary File

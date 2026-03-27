@@ -80,6 +80,8 @@ $ARGUMENTS
 
 **Principles Coverage Score**: Assess whether principles cover all 4 architecture domains (Business, Application, Data, Technology). Flag domains with no principle coverage.
 
+**Principles-to-Standards Traceability**: Map each principle to the external standard(s) it derives from (e.g., P-003 Security by Design → NCSC CAF, P-001 Cloud-First → Government Cloud First Policy). This ensures principles are grounded in authoritative sources.
+
 Before writing the file, read `.arckit/references/quality-checklist.md` and verify all **Common Checks** plus the **PRIN** per-type checks pass. Fix any failures before proceeding.
 
    - **Document ID**: `ARC-000-PRIN-v{VERSION}` (e.g., `ARC-000-PRIN-v1.0`) — 000 indicates global/cross-project document

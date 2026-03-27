@@ -114,7 +114,7 @@ $ARGUMENTS
      - Example: "BR-001 addresses CFO's goal G-1: Reduce infrastructure costs 40% by end of Year 1"
      - Example: "NFR-P-001 supports Operations Director's outcome O-3: Maintain 99.95% uptime"
    - Reference relevant principles from `projects/000-global/ARC-000-PRIN-*.md`:
-     - Example: "NFR-S-001 aligns with Security by Design principle (SEC-001)"
+     - Example: "NFR-SEC-001 aligns with Security by Design principle (SEC-001)"
    - Ensure high-priority stakeholder drivers get MUST requirements
    - Document which stakeholder benefits from each requirement
    - After generating all requirements, include a **Requirements Coverage Matrix** showing each stakeholder goal and which requirements address it. Flag any stakeholder goals with NO requirements (coverage gaps). This ensures nothing from the stakeholder analysis is missed
@@ -143,7 +143,9 @@ $ARGUMENTS
      - How losing stakeholder will be managed (communication, future consideration)
    - **Transparency**: Be explicit about trade-offs - don't hide conflicts or pretend both can be satisfied
 
-9. **Write the output**:
+9. After the requirements content, add a **Requirements Quality Score**: Calculate as percentage of requirements that have all required fields (ID, statement, acceptance criteria, MoSCoW priority, rationale, dependencies). Score = qualifying requirements / total × 100%.
+
+10. **Write the output**:
 
    Before writing the file, read `${CLAUDE_PLUGIN_ROOT}/references/quality-checklist.md` and verify all **Common Checks** plus the **REQ** per-type checks pass. Fix any failures before proceeding.
 

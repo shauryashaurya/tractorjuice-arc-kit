@@ -403,6 +403,8 @@ To avoid exceeding Claude Code's 32K token output limit, you MUST use the follow
 
 Create the comprehensive, executive-ready Strategic Outline Business Case following the 5-case model template structure.
 
+After the SOBC content, add a **Business Case Readiness Score**: Calculate as percentage of the 5 cases that are substantively complete (Strategic, Economic, Commercial, Financial, Management). Score = complete cases / 5 × 100%.
+
 Before writing the file, read `.arckit/references/quality-checklist.md` and verify all **Common Checks** plus the **SOBC** per-type checks pass. Fix any failures before proceeding.
 
 ### 2. Write Directly to File
