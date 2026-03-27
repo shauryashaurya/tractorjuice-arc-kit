@@ -18,12 +18,19 @@ Wardley Mapping is a strategic situational awareness technique that maps:
 
 ### Evolution Stages
 
-| Stage | Evolution | Characteristics | Strategic Action |
-|-------|-----------|-----------------|------------------|
-| **Genesis** | 0.00-0.25 | Novel, uncertain, rapidly changing | Build only if strategic differentiator, R&D focus |
-| **Custom** | 0.25-0.50 | Bespoke, emerging practices, competitive advantage | Build vs Buy critical decision, invest in IP |
-| **Product** | 0.50-0.75 | Products with feature differentiation, maturing market | Buy from vendors, compare features, standardize |
+| Stage | Evolution Range | Characteristics | Strategic Action |
+|-------|----------------|-----------------|------------------|
+| **Genesis** | 0.00-0.24 | Novel, uncertain, rapidly changing | Build only if strategic differentiator, R&D focus |
+| **Custom** | 0.25-0.49 | Bespoke, emerging practices, competitive advantage | Build vs Buy critical decision, invest in IP |
+| **Product** | 0.50-0.74 | Products with feature differentiation, maturing market | Buy from vendors, compare features, standardize |
 | **Commodity** | 0.75-1.00 | Utility, standardized, industrialized | Always use commodity/cloud, never build |
+
+**CRITICAL — Stage-Evolution Alignment** (enforced by `validate-wardley-math.mjs`):
+
+- The Stage label MUST match the evolution value: Genesis < 0.25, Custom 0.25-0.49, Product 0.50-0.74, Commodity >= 0.75
+- **Avoid exact boundary values** (0.25, 0.50, 0.75) — use values clearly within a stage (e.g., 0.72 for Product, 0.78 for Commodity) to prevent ambiguity
+- OWM code block coordinates MUST exactly match the Component Inventory table — any mismatch is rejected
+- Example: GOV.UK Design System is a widely adopted standard — position at 0.72 (Product) not 0.75+ (Commodity)
 
 ## User Input
 
@@ -265,16 +272,6 @@ For each component, determine:
    - Rapid commoditization risk
    - Skills gap risk
 
-5. **Mathematical Strategic Metrics** (from `tractorjuice/wardleymap_math_model`):
-
-   Compute these metrics for each component and include a summary table in the output:
-
-   - **Differentiation Pressure**: D(v) = visibility(v) x (1 - evolution(v)) — high D (> 0.4) indicates components where the organisation should invest in differentiation. These should appear in the "Build" category.
-   - **Commodity Leverage**: K(v) = (1 - visibility(v)) x evolution(v) — high K (> 0.4) indicates hidden infrastructure that should be commoditised. These should appear in the "Buy/Rent" category.
-   - **Dependency Risk**: R(a,b) = visibility(a) x (1 - evolution(b)) — high R (> 0.4) flags visible components depending on immature dependencies. These should appear in the Risk Analysis section.
-
-   **Validation**: The metrics must be consistent with the strategic recommendations. A component with high D flagged as "Buy" or a component with high K flagged as "Build" indicates a positioning or strategy error — review and correct.
-
 ### Wardley Book Knowledge (if Pinecone MCP available)
 
 If the `search-records` tool from the Pinecone MCP is available, use it to search the Wardley Mapping book corpus for relevant strategic context. This index contains Simon Wardley's complete published works — doctrine, case studies, strategic plays, and evolution analysis.
@@ -439,6 +436,7 @@ The Wardley Map document must include:
 
 3. **Component Inventory**:
    - All components with visibility, evolution, stage classification
+   - **Positioning rationale** for each component: explain *why* it sits at that evolution stage (e.g., "0.42 Custom — bespoke scheduling logic with no off-the-shelf equivalent for UK Government appointment rules" not just "Custom — scheduling engine"). Reference market evidence, project requirements, or architecture principles
    - Strategic notes for each component
 
 4. **Evolution Analysis**:
@@ -770,10 +768,6 @@ The visualization helps:
 ---
 
 - **Markdown escaping**: When writing less-than or greater-than comparisons, always include a space after `<` or `>` (e.g., `< 3 seconds`, `> 99.9% uptime`) to prevent markdown renderers from interpreting them as HTML tags or emoji
-
-After the Wardley Map, add:
-
-**Strategic Position Score**: Calculate percentage of components in each evolution stage (Genesis/Custom/Product/Commodity). Highlight components mispositioned relative to their market evolution.
 
 Before writing the file, read `.arckit/references/quality-checklist.md` and verify all **Common Checks** plus the **WARD** per-type checks pass. Fix any failures before proceeding.
 

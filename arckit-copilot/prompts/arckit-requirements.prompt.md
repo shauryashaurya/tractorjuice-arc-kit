@@ -65,19 +65,19 @@ ${input:topic:Enter project name or topic}
    - Stakeholder needs
 
    **Functional Requirements (FR-xxx)**:
-   - User personas and their needs
-   - User stories and use cases
-   - Features and capabilities
-   - User workflows
+   - User personas (2-4) with role, goals, pain points, technical proficiency
+   - Use cases (UC-xxx) with main flow, alternative flows, exception flows, and business rules — follow the template's UC structure
+   - Detailed functional requirements (FR-xxx) with acceptance criteria in Given/When/Then format
+   - User workflows and feature capabilities
 
-   **Non-Functional Requirements (NFR-xxx)** — use sub-prefixes consistently:
-   - NFR-P: Performance (response time, throughput, concurrent users)
-   - NFR-SEC: Security (authentication, authorisation, encryption)
-   - NFR-S: Scalability (growth projections, load handling)
-   - NFR-A: Availability (uptime SLA, MTBF, MTTR)
-   - NFR-ACC: Accessibility (WCAG 2.2 AA, assistive technology support, screen reader compatibility) — mandatory for UK Gov public-facing services
-   - NFR-M: Maintainability (code standards, documentation, supportability)
-   - NFR-C: Compliance (regulations, standards, certifications)
+   **Non-Functional Requirements (NFR-xxx)**:
+   - Performance (NFR-P: response time, throughput, concurrent users)
+   - Availability and Resilience (NFR-A: uptime SLA, disaster recovery RPO/RTO, failover)
+   - Scalability (NFR-S: growth projections, horizontal/vertical scaling, data volume)
+   - Security (NFR-SEC: authentication, authorisation, encryption, secrets management, vulnerability management)
+   - Compliance (NFR-C: GDPR, audit logging, regulatory reporting, data residency)
+   - Usability (NFR-U: accessibility WCAG 2.2 AA, localisation, user onboarding)
+   - Maintainability and Observability (NFR-M: logging, metrics, tracing, documentation, runbooks)
 
    **Integration Requirements (INT-xxx)**:
    - Upstream/downstream systems
@@ -95,19 +95,17 @@ ${input:topic:Enter project name or topic}
    - Unique ID (BR-001, FR-001, NFR-P-001, etc.)
    - Clear requirement statement
    - Acceptance criteria (testable)
-   - Priority using MoSCoW: MUST (non-negotiable), SHOULD (important but not critical), COULD (desirable if budget allows), WON'T (explicitly excluded from this release)
-   - Rationale (why this requirement exists)
-   - Dependencies (which other requirements must be met first, e.g., "Depends on: INT-001, DR-002")
+   - Priority (MUST/SHOULD/MAY)
+   - Rationale
 
 7. **Align with stakeholder goals and architecture principles**:
    - If stakeholder analysis exists, trace requirements back to stakeholder goals:
      - Example: "BR-001 addresses CFO's goal G-1: Reduce infrastructure costs 40% by end of Year 1"
      - Example: "NFR-P-001 supports Operations Director's outcome O-3: Maintain 99.95% uptime"
    - Reference relevant principles from `projects/000-global/ARC-000-PRIN-*.md`:
-     - Example: "NFR-SEC-001 aligns with Security by Design principle (SEC-001)"
+     - Example: "NFR-S-001 aligns with Security by Design principle (SEC-001)"
    - Ensure high-priority stakeholder drivers get MUST requirements
    - Document which stakeholder benefits from each requirement
-   - After generating all requirements, include a **Requirements Coverage Matrix** showing each stakeholder goal and which requirements address it. Flag any stakeholder goals with NO requirements (coverage gaps). This ensures nothing from the stakeholder analysis is missed
 
 8. **Identify and resolve conflicting requirements**:
    - Review stakeholder analysis `conflict analysis` section for known competing drivers
@@ -133,17 +131,15 @@ ${input:topic:Enter project name or topic}
      - How losing stakeholder will be managed (communication, future consideration)
    - **Transparency**: Be explicit about trade-offs - don't hide conflicts or pretend both can be satisfied
 
-9. After the requirements content, add a **Requirements Quality Score**: Calculate as percentage of requirements that have all required fields (ID, statement, acceptance criteria, MoSCoW priority, rationale, dependencies). Score = qualifying requirements / total × 100%.
-
-10. **Write the output**:
+9. **Write the output**:
 
    Before writing the file, read `.arckit/references/quality-checklist.md` and verify all **Common Checks** plus the **REQ** per-type checks pass. Fix any failures before proceeding.
 
-- **CRITICAL - Token Efficiency**: Use the **Write tool** to create `projects/{project-dir}/ARC-{PROJECT_ID}-REQ-v${VERSION}.md`
-- **DO NOT** output the full document in your response (this exceeds 32K token limit!)
-- Use the exact template structure
-- Include all sections even if some are TBD
-- MUST include "Requirement Conflicts & Resolutions" section if any conflicts exist
+   - **CRITICAL - Token Efficiency**: Use the **Write tool** to create `projects/{project-dir}/ARC-{PROJECT_ID}-REQ-v${VERSION}.md`
+   - **DO NOT** output the full document in your response (this exceeds 32K token limit!)
+   - Use the exact template structure
+   - Include all sections even if some are TBD
+   - MUST include "Requirement Conflicts & Resolutions" section if any conflicts exist
 
 **CRITICAL - Auto-Populate Document Control Fields**:
 
