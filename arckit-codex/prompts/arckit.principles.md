@@ -84,11 +84,11 @@ $ARGUMENTS
 
 Before writing the file, read `.arckit/references/quality-checklist.md` and verify all **Common Checks** plus the **PRIN** per-type checks pass. Fix any failures before proceeding.
 
-   - **Document ID**: `ARC-000-PRIN-v{VERSION}` (e.g., `ARC-000-PRIN-v1.0`) — 000 indicates global/cross-project document
-   - **Filename**: `ARC-000-PRIN-v{VERSION}.md`
-   - Write to: `projects/000-global/ARC-000-PRIN-v${VERSION}.md`
-   - Use the exact template structure
-   - Make it ready for immediate use by development teams
+- **Document ID**: `ARC-000-PRIN-v{VERSION}` (e.g., `ARC-000-PRIN-v1.0`) — 000 indicates global/cross-project document
+- **Filename**: `ARC-000-PRIN-v{VERSION}.md`
+- Write to: `projects/000-global/ARC-000-PRIN-v${VERSION}.md`
+- Use the exact template structure
+- Make it ready for immediate use by development teams
 
    > **WARNING**: Do NOT use legacy filename `architecture-principles.md`. Always use the document ID format.
    > **NOTE**: The `projects/000-global/` directory is for cross-project artifacts like architecture principles.

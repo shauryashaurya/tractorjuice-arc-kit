@@ -102,6 +102,7 @@ Organize the Glossary table into **category sub-sections** (Business Terms, Tech
 After the Traceability section, add a **Terminology Consistency Notes** section listing any terms that are referred to by different names or abbreviations across artifacts (e.g., "SRO" / "Service Owner" / "Senior Responsible Owner"). For each, specify the **canonical term** to use going forward. This helps standardize project language.
 
 After that, add a **Usage Guide** section explaining:
+
 - How other project documents should reference this glossary (e.g., "On first use of a glossary term in any artifact, italicise it and note '(see Glossary)'")
 - When to update the glossary (after each new artifact is created)
 - How to propose new terms (submit to the Lead Architect for inclusion)
