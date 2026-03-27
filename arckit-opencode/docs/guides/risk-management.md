@@ -35,7 +35,7 @@ Output: `projects/<id>/ARC-<id>-RISK-v1.0.md` plus heatmap images.
 | Risk ID & Category | Strategic, Operational, Financial, Compliance, Reputational, Technology | Categories align with Orange Book |
 | Description & Cause | Concise summary plus trigger | Use “Cause → Event → Effect” wording |
 | Inherent Score | Likelihood × Impact (1–5) before controls | Colour-coded heatmap |
-| Treatment (4Ts) | Tolerate / Treat / Transfer / Terminate | Include action owner, due date |
+| Treatment (Orange Book 2023) | Avoid / Take / Retain / Change Likelihood / Change Consequences / Share | Include action owner, due date |
 | Residual Score | Post-mitigation rating | Must sit within risk appetite |
 | Monitoring | Review cadence, indicators, linkage to backlog | Reference JIRA/ServiceNow ticket if applicable |
 

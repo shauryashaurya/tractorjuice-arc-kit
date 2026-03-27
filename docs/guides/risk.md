@@ -41,14 +41,16 @@ Output: `projects/<id>/ARC-<id>-RISK-v1.0.md`
 
 ---
 
-## Orange Book 4Ts Risk Responses
+## Orange Book 2023 Risk Treatment Options
 
 | Response | Description | When to Use |
 |----------|-------------|-------------|
-| Tolerate | Accept the risk | Low impact, low likelihood |
-| Treat | Mitigate the risk | Reduce likelihood or impact |
-| Transfer | Share the risk | Insurance, contracts, third parties |
-| Terminate | Avoid the risk | Remove the risk source entirely |
+| Avoid | Decide not to start or continue the activity | Risk exceeds appetite, activity not essential |
+| Take/Increase | Pursue an opportunity despite risk | Upside outweighs downside |
+| Retain | Accept the risk through informed decision | Residual risk within appetite |
+| Change Likelihood | Reduce probability of occurrence | Root cause addressable through controls |
+| Change Consequences | Reduce impact if risk materialises | Likelihood hard to reduce, impact containable |
+| Share | Transfer or distribute risk to third party | Risk can be contractually transferred |
 
 ---
 
@@ -116,7 +118,7 @@ Output: `projects/<id>/ARC-<id>-RISK-v1.0.md`
 | Likelihood | 1-5 score with rationale |
 | Impact | 1-5 score with rationale |
 | Inherent Score | Likelihood × Impact (before treatment) |
-| Response | Tolerate/Treat/Transfer/Terminate |
+| Response | Orange Book 2023: Avoid/Take/Retain/Change Likelihood/Change Consequences/Share |
 | Treatment | Actions to address the risk |
 | Owner | Person accountable |
 | Residual Score | Score after treatment |

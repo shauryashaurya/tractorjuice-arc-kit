@@ -115,7 +115,7 @@
 **Risk Coverage**:
 | Risk ID | Category | Inherent | Residual | Response | Mitigation in Req? | Mitigation in Design? |
 |---------|----------|----------|----------|----------|-------------------|---------------------|
-| R-001 | [Category] | [Very High/High/Medium/Low] | [Score] | [4Ts] | [✅/❌] | [✅/❌] |
+| R-001 | [Category] | [Very High/High/Medium/Low] | [Score] | [Orange Book Treatment] | [✅/❌] | [✅/❌] |
 
 **High/Very High Risks Requiring Attention**:
 | Risk ID | Description | Current Status | Required Action |

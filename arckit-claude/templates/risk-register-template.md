@@ -259,7 +259,7 @@ Legend: ██ Critical (20-25)  ▓▓ High (13-19)  ░░ Medium (6-12)  ··
 **Risk Zone:** 🟧 High (13-19)
 **Risk Reduction:** 36% reduction from inherent (25 → 16)
 
-#### Risk Response (4Ts Framework)
+#### Risk Response (Orange Book 2023)
 
 **Primary Response:** TREAT (Mitigate/Reduce)
 
@@ -488,7 +488,7 @@ Legend: ██ Critical (20-25)  ▓▓ High (13-19)  ░░ Medium (6-12)  ··
 
 ---
 
-## F. 4Ts Response Framework Summary
+## F. Risk Treatment Summary (Orange Book 2023)
 
 **Risk Response Distribution:**
 
@@ -748,7 +748,7 @@ This risk register demonstrates compliance with HM Treasury Orange Book (2023):
 - ✅ **D. Risk Management Processes**
   - Systematic identification across 6 categories
   - Consistent assessment methodology (5×5 matrix)
-  - 4Ts response framework applied
+  - Orange Book 2023 six treatment options applied
   - Inherent and residual risk tracked
 
 - ✅ **E. Continual Improvement**

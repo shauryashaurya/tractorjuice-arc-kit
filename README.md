@@ -283,7 +283,7 @@ Define your organisation's architecture standards:
 - Follow HM Treasury Orange Book 2023 framework
 - Identify risks across 6 categories (Strategic, Operational, Financial, Compliance, Reputational, Technology)
 - Assess inherent risk (before controls) and residual risk (after controls)
-- Apply 4Ts response framework (Tolerate, Treat, Transfer, Terminate)
+- Apply Orange Book 2023 risk treatment options (Avoid, Take/Increase, Retain, Change Likelihood, Change Consequences, Share)
 - Link every risk to stakeholder from RACI matrix
 - Monitor risk appetite compliance
 - Feed into SOBC Management Case Part E
