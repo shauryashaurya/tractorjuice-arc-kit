@@ -15,6 +15,7 @@ export const DOC_TYPES = {
   'STKE':      { name: 'Stakeholder Analysis',             category: 'Discovery' },
   'RSCH':      { name: 'Research Findings',                category: 'Discovery' },
   'DSCT':      { name: 'Data Source Discovery',            category: 'Discovery' },
+  'GLOS':      { name: 'Project Glossary',                  category: 'Discovery' },
   // Planning
   'SOBC':      { name: 'Strategic Outline Business Case',  category: 'Planning' },
   'PLAN':      { name: 'Project Plan',                     category: 'Planning' },
@@ -43,6 +44,7 @@ export const DOC_TYPES = {
   'PRES':      { name: 'Presentation',                     category: 'Reporting' },
   'ANAL':      { name: 'Analysis Report',                  category: 'Governance' },
   'GAPS':      { name: 'Gap Analysis',                     category: 'Governance' },
+  'MMOD':      { name: 'Maturity Model Assessment',        category: 'Governance' },
   // Compliance
   'TCOP':      { name: 'TCoP Assessment',                  category: 'Compliance' },
   'SECD':      { name: 'Secure by Design',                 category: 'Compliance' },
