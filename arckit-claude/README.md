@@ -32,13 +32,13 @@ claude --plugin-dir /path/to/arc-kit/arckit-claude
 
 ## Prerequisites
 
-- **Claude Code** v2.1.97 or later (recommended minimum)
+- **Claude Code** v2.1.105 or later recommended (v2.1.97 minimum)
 - **Bash** shell (for helper scripts)
 - For `/arckit:aws-research`: AWS Knowledge MCP server (included)
 - For `/arckit:azure-research`: Microsoft Learn MCP server (included)
 - For `/arckit:gcp-research`: Google Developer Knowledge MCP (requires `GOOGLE_API_KEY` — see [MCP Servers](#mcp-servers))
 
-> **Why v2.1.97?** This version fixes `claude plugin update` silently missing updates for git-based plugins (critical for ArcKit distribution), fixes a MCP HTTP/SSE memory leak (~50 MB/hr on reconnects, affects ArcKit's 5 bundled MCP servers), adds proper exponential backoff for 429 retries (benefits ArcKit's 10 research agents), fixes Stop/SubagentStop hooks failing on long sessions (affects session-learner), fixes subagent working directory leaks, and includes all prior v2.1.90–v2.1.94 fixes for hooks, MCP performance, and agent stability.
+> **Why v2.1.105?** This version adds the `monitors` top-level manifest key (background monitors for plugins), raises the skill description cap from 250 to 1,536 characters, adds PreCompact hook blocking, fixes automatic dependency install for marketplace plugins with `package.json`/lockfile (critical for the Paperclip TypeScript plugin), fixes marketplace auto-update leaving a broken state on file locks, strips `<style>`/`<script>` tags from WebFetch (benefits research agents), and aborts stalled API streams after 5 minutes with fallback retry. **Minimum v2.1.97** is still required and fixes `claude plugin update` silently missing updates for git-based plugins, an MCP HTTP/SSE memory leak (~50 MB/hr on reconnects), proper exponential backoff for 429 retries, Stop/SubagentStop hooks failing on long sessions, and subagent working directory leaks.
 
 ## Quick Start
 

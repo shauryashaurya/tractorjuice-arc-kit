@@ -35,7 +35,7 @@ ArcKit is a toolkit for enterprise architects that transforms architecture gover
 
 ### Installation
 
-**Claude Code** (premier experience) — install the ArcKit plugin (requires **v2.1.97+**):
+**Claude Code** (premier experience) — install the ArcKit plugin (**v2.1.105+ recommended**, **v2.1.97 minimum**):
 
 ```text
 /plugin marketplace add tractorjuice/arc-kit

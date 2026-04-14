@@ -166,7 +166,7 @@ ArcKit has been tested on 22 real-world projects spanning healthcare, defence, g
 
 Then enable it from the Discover tab. The plugin provides all 68 commands, 10 agents, 17 hooks, 4 skills, and 5 MCP servers. Updates are automatic.
 
-> **Minimum version**: Claude Code v2.1.97 or later is required.
+> **Recommended**: Claude Code v2.1.105 or later. **Minimum**: v2.1.97.
 
 **Gemini CLI**:
 
@@ -2364,7 +2364,7 @@ npx markdownlint-cli2 --fix "**/*.md"
 
 ### Claude Code Platform Compatibility
 
-ArcKit actively tracks Claude Code releases for capabilities that improve the plugin. Issue #215 consolidates this tracking from v2.1.83 through v2.1.97.
+ArcKit actively tracks Claude Code releases for capabilities that improve the plugin. Issue #215 consolidates this tracking from v2.1.83 through v2.1.107.
 
 **Minimum version history:**
 
@@ -2372,6 +2372,7 @@ ArcKit actively tracks Claude Code releases for capabilities that improve the pl
 |------|---------|--------|
 | Pre-April 2026 | v2.1.90 | PreToolUse blocking fix, MCP performance |
 | 9 April 2026 | v2.1.97 | Plugin update detection, MCP memory leak, 429 backoff |
+| 14 April 2026 | v2.1.97 (min), v2.1.105 (recommended) | Marketplace plugin deps auto-install, `monitors` manifest, skill description cap raised to 1,536 chars |
 
 **Key Claude Code fixes that affected ArcKit:**
 
@@ -2380,6 +2381,9 @@ ArcKit actively tracks Claude Code releases for capabilities that improve the pl
 - **v2.1.92**: Stop hook semantics fix (affects session-learner); plugin MCP stuck 'connecting' fix; Write tool 60% faster for large files
 - **v2.1.94**: `keep-coding-instructions` frontmatter for compaction persistence; fixed agents stuck after 429 with long Retry-After
 - **v2.1.97**: MCP SSE memory leak fix (~50 MB/hr); 429 exponential backoff fix; `claude plugin update` detects new commits
+- **v2.1.98**: Subagent MCP tool inheritance fix; compound Bash permission bypass security fix; `Monitor` tool for streaming background script events
+- **v2.1.101**: Sub-agents in isolated worktrees can now Read/Edit their own worktree; MCP tools available on first turn of headless sessions; `permissions.deny` overrides PreToolUse hook `ask`
+- **v2.1.105**: `monitors` top-level plugin manifest key; skill description cap raised 250→1,536 chars; PreCompact hook blocking; marketplace plugin `package.json`/lockfile auto-install (critical for Paperclip); WebFetch strips `<style>`/`<script>`
 
 ArcKit is one of the most complex Claude Code plugins in existence. Its 17 hooks, 10 agents, and 5 MCP servers push the platform's capabilities, making it both a beneficiary and a stress-tester of Claude Code features.
 
@@ -2580,7 +2584,7 @@ As of v4.6.6, ArcKit has 18 open issues on GitHub. Here are the most significant
 #### In Progress
 
 - **#282: Managed agent deployment** -- Deploy ArcKit agents as Claude Managed Agents via the Anthropic API. Prototype merged in v4.6.6. Full deployment automation still in progress
-- **#215: Claude Code v2.1.83-2.1.97 capabilities** -- 14 high-value platform features to adopt, including `userConfig` (org-level settings), `initialPrompt` (auto-starting agents), `keep-coding-instructions` (compaction resilience), and `PostCompact` hooks
+- **#215: Claude Code v2.1.83-2.1.107 capabilities** -- 19 high-value platform features to adopt, including `userConfig` (org-level settings), `initialPrompt` (auto-starting agents), `keep-coding-instructions` (compaction resilience), `PostCompact` hooks, `monitors` manifest (background monitors), and the expanded 1,536-char skill description cap
 - **#283: Citation traceability for MCP and web results** -- Currently citations only cover documents from `external/`. MCP search results and WebFetch URLs should also be cited with source URLs
 
 #### Security
@@ -3040,7 +3044,7 @@ A: Edit `.mcp.json` in the plugin root (for plugin-wide) or `.claude/settings.js
 ### Troubleshooting
 
 **Q: The plugin isn't loading or seems outdated.**
-A: Check your Claude Code version (minimum v2.1.97). Try `claude plugin update`. If using a branch for testing, ensure the settings use `"ref"` not `"branch"`.
+A: Check your Claude Code version (minimum v2.1.97, recommended v2.1.105). Try `claude plugin update`. If using a branch for testing, ensure the settings use `"ref"` not `"branch"`.
 
 **Q: Commands are generating truncated documents.**
 A: This usually means the Write tool path is wrong. Check that the project directory exists. Also check that the command is using the Write tool (not inline output).

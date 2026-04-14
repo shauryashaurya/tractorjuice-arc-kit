@@ -2,9 +2,9 @@
 
 ## Tracking the Platform (Issue #215)
 
-ArcKit actively tracks Claude Code releases for capabilities that improve the plugin. Issue #215 consolidates tracking from v2.1.83 through v2.1.97.
+ArcKit actively tracks Claude Code releases for capabilities that improve the plugin. Issue #215 consolidates tracking from v2.1.83 through v2.1.107.
 
-## High-Value Capabilities Identified (14 Items)
+## High-Value Capabilities Identified (19 Items)
 
 | # | Capability | Claude Code Version | Impact on ArcKit |
 |---|-----------|-------------------|-----------------|
@@ -19,9 +19,14 @@ ArcKit actively tracks Claude Code releases for capabilities that improve the pl
 | 9 | MCP `headersHelper` env vars | v2.1.85 | Shared auth for multiple MCP servers |
 | 10 | `PermissionDenied` hook | v2.1.89 | Handle auto-mode denials with retry |
 | 11 | `defer` permission for PreToolUse | v2.1.89 | Headless/CI pause-and-resume |
-| 12 | Skill description 250-char cap | v2.1.86 | **Fixed in v4.6.1** -- trimmed all 4 skill descriptions |
+| 12 | Skill description 250-char cap | v2.1.86 | **Raised to 1,536 chars in v2.1.105** -- can restore richer descriptions |
 | 13 | `keep-coding-instructions` frontmatter | v2.1.94 | Persist static instructions across compaction |
 | 14 | `hookSpecificOutput.sessionTitle` | v2.1.94 | Session-aware learning in session-learner.mjs |
+| 15 | `monitors` top-level manifest key | v2.1.105 | Background monitors for artifact watch and stale-doc detection |
+| 16 | Skill description cap 250→1,536 | v2.1.105 | Re-evaluate 4 skill descriptions for better discoverability |
+| 17 | PreCompact hook blocking | v2.1.105 | Block compaction mid-session when critical state is still needed |
+| 18 | `Monitor` tool | v2.1.98 | Stream events from long-running background scripts (research agents, govreposcrape) |
+| 19 | `/claude-api` Managed Agents coverage | v2.1.98 | Aligns with arckit-research managed agent deployment (PR #282) |
 
 ## Platform Fixes That Affected ArcKit
 
@@ -64,12 +69,41 @@ ArcKit actively tracks Claude Code releases for capabilities that improve the pl
 - Compaction dedup of multi-MB subagent transcript files
 - Session transcript size reduced by skipping empty hook entries (benefits 18 hooks)
 
+### v2.1.98
+- Subagent MCP tool inheritance from dynamically-injected servers fixed (affects 10 agents × 5 MCP servers)
+- Compound Bash permission bypass security fix
+- `Monitor` tool added for streaming events from background scripts
+- `/claude-api` skill now covers Managed Agents alongside Claude API
+- Bash command injection in POSIX `which` fallback fixed
+
+### v2.1.101
+- Sub-agents in isolated worktrees can now Read/Edit their own worktree
+- MCP tools now available on first turn of headless/remote-trigger sessions
+- `permissions.deny` now overrides PreToolUse hook `ask` (safer default)
+- Plugin slash commands resolving to wrong plugin with duplicate `name:` fixed
+- Skills now honor `context: fork` and `agent` frontmatter fields
+- OS CA certificate store trusted by default (enterprise TLS proxies work out-of-box)
+
+### v2.1.105 (Current Recommended)
+- `monitors` top-level plugin manifest key for background monitors
+- Skill description cap raised from 250 to 1,536 characters
+- PreCompact hook can now block compaction (exit 2 or `{"decision":"block"}`)
+- Marketplace plugins with `package.json` + lockfile auto-install deps (critical for Paperclip TS plugin)
+- Marketplace auto-update no longer leaves broken state on file-lock during update
+- Stalled API streams abort after 5 min with non-streaming retry
+- WebFetch strips `<style>`/`<script>` tags (benefits research agents)
+- Stale agent worktree cleanup for squash-merged PRs
+
+### v2.1.107
+- Thinking hints shown sooner during long operations (no ArcKit impact)
+
 ## Minimum Version History
 
 | Date | Min Version | Reason |
 |------|------------|--------|
 | Pre-April 2026 | v2.1.90 | PreToolUse blocking fix, MCP performance |
 | 9 April 2026 | v2.1.97 | `claude plugin update` fix, MCP memory leak, 429 backoff |
+| 14 April 2026 | v2.1.97 (min), v2.1.105 (recommended) | Marketplace plugin deps auto-install, `monitors` manifest, skill description cap raised |
 
 ## The Relationship Between ArcKit and Claude Code
 
